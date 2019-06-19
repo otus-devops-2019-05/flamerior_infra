@@ -41,6 +41,6 @@ cloud-bastion.ovpn - config for ovpn client loaded from pritunl use
  
 ips of VM's are
 ```
-bastion_IP = 35.210.2.185
-someinternalhost_IP = 10.132.0.3
+bastion_IP=35.210.2.185
+someinternalhost_IP=10.132.0.3
 ```
