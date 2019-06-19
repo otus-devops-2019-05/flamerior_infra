@@ -1,8 +1,11 @@
-# flamerior_infra
-flamerior Infra repository
+#Homework №1
 Добавлена интеграция с Travis и Slack
+
 Исправлен тест на питоне
+
 Добавлен шаблон для PR
+
+#Homework №2
 
 ##Tasks 
 
