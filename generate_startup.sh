@@ -6,4 +6,3 @@ echo '#installing mongo' >> startup.sh
 tail -n$((`cat ./install_mongodb.sh | wc -l` - 1)) ./install_mongodb.sh >> startup.sh
 echo '#deploying' >> startup.sh
 tail -n$((`cat ./deploy.sh | wc -l` - 1)) ./deploy.sh >> startup.sh
-
