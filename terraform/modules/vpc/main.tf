@@ -14,7 +14,7 @@ resource "google_compute_firewall" "firewall_db" {
   name = "allow-db-default"
   network = "${google_compute_network.internal_net.self_link}"
   allow {
-    protocol = "tcp", ports = ["27017"]
+    protocol = "tcp", ports = ["27017", "22"]
   }
   source_ranges = ["${var.app_ip}/32"]
   target_tags = ["reddit-db"]

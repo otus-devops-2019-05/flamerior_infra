@@ -45,3 +45,11 @@ module "vpc" {
   region        = "${var.region}"
 
 }
+
+resource "template_file" "dyn_inv" {
+  template = "${file("dynamic_inventory.json")}"
+  vars {
+    app_ext_ip = "${module.app.app_external_ip[0]}"
+    db_ext_ip = "${module.db.db_external_ip[0]}"
+  }
+}

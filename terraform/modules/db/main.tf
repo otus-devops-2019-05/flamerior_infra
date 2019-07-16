@@ -11,6 +11,8 @@ resource "google_compute_instance" "db" {
   network_interface {
     network = "${var.network}"
     network_ip = "${var.db_ip}"
+    access_config = {
+    }
   }
   metadata {
     ssh-keys = "appuser:${file(var.public_key_path)}"
