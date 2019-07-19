@@ -16,15 +16,14 @@
       "disk_size": 10,
       "disk_type": "pd-standard",
       "image_description": "Custom image with ruby and mongo",
-      "tags": ["puma-base"],
+      "tags": ["packer-ssh"],
       "network": "default"
     }
   ],
   "provisioners": [
     {
-      "type": "shell",
-      "script": "scripts/install_mongodb.sh",
-      "execute_command": "sudo {{.Path}}"
+      "type": "ansible",
+      "playbook_file": "ansible/packer_db.yml"
     }
   ]
 }

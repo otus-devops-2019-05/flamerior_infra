@@ -16,24 +16,6 @@ resource "google_compute_instance" "app" {
   metadata {
     ssh-keys = "appuser:${file(var.public_key_path)}"
   }
-  connection {
-    type        = "ssh"
-    user        = "appuser"
-    agent       = false
-    private_key = "${var.private_key}"
-  }
-  provisioner "file" {
-    content      = "${template_file.puma_service.rendered}"
-    destination = "/tmp/puma.service"
-  }
-
-  provisioner "file" {
-    source      = "${path.module}/files/deploy.sh"
-    destination = "deploy.sh"
-  }
-  provisioner "remote-exec" {
-    inline = ["chmod +x deploy.sh", "${var.autodeploy=="true" ? local.autodeploy : local.info}"]
-}
 
 }
 
