@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-Environment="DATABASE_URL=${db_ip}:27017"
+EnvironmentFile=/home/appuser/db_config
 User=appuser
 WorkingDirectory=/home/appuser/reddit
 ExecStart=/bin/bash -lc 'puma'

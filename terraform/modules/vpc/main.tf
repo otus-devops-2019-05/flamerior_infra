@@ -39,16 +39,6 @@ resource "google_compute_firewall" "firewall_puma" {
   source_ranges = ["0.0.0.0/0"]
   target_tags = ["reddit-app"]
 }
-resource "google_compute_firewall" "firewall_mongo" {
-  name = "allow-mongo-default"
-  network = "${google_compute_network.internal_net.self_link}"
-  allow {
-    protocol = "tcp"
-    ports = ["27017"]
-  }
-  target_tags = ["reddit-db"]
-  source_tags = ["reddit-app"]
-}
 
 
 resource "google_compute_address" "db-address" {

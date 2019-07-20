@@ -51,5 +51,6 @@ resource "template_file" "dyn_inv" {
   vars {
     app_ext_ip = "${module.app.app_external_ip[0]}"
     db_ext_ip = "${module.db.db_external_ip[0]}"
+    db_int_ip = "${module.vpc.db_ip}"
   }
 }

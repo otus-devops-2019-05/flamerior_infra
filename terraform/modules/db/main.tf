@@ -16,7 +16,6 @@ resource "google_compute_instance" "db" {
   }
   metadata {
     ssh-keys = "appuser:${file(var.public_key_path)}"
-    startup-script ="${file("${path.module}/files/config_mongo.sh")}"
   }
 }
 
