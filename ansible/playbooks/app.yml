@@ -1,0 +1,12 @@
+---
+- name: Configure App
+  hosts: app
+  become: true
+#  tasks:
+#    - name: test
+#      debug:
+#        msg: "qqqq {{ nginx_sites.keys() }}"
+  roles:
+    - app
+    - role: jdauphant.nginx
+      nginx_sites: "{{ sites }}"
