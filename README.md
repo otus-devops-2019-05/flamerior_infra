@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/otus-devops-2019-05/flamerior_infra.svg?branch=ansible-3)](https://travis-ci.com/otus-devops-2019-05/flamerior_infra)
 #Homework №1
 Добавлена интеграция с Travis и Slack
 
@@ -165,3 +166,19 @@ testapp_port = 9292
 созданы плейбуки с одним сценарием, с несколькими сценариями
 сценарии разделены на несколько плейбуков с импортом в одном
 созданы и проверены плейбуки для пакера 
+
+
+
+### 10)
+выполнены основное, задание со * и задание с **
+- плейбуки разделены на роли и разнесены по папкам
+- добавлены через vault креды для окружений 
+- добавлено проксирование с 80 го порта для stage
+- добавлен динамический инвентори в оба окружения (по умолчанию stage)
+- создан репозиторий для тестов инфраструктыры (https://github.com/flamerior/infra_tests)
+- разобрался с принципом построения докер файла и запуска Chef InSpec
+- написал свои тесты для InSpec (разница в том что ищет по шаблонам в директориях и добавил tflint
+- добавил картинку состояния билда 
+- использовал trytravis
+
+[![Build Status](https://travis-ci.com/otus-devops-2019-05/flamerior_infra.svg?branch=ansible-3)](https://travis-ci.com/otus-devops-2019-05/flamerior_infra)

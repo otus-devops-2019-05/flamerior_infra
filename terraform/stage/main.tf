@@ -47,10 +47,24 @@ module "vpc" {
 }
 
 resource "template_file" "dyn_inv" {
-  template = "${file("dynamic_inventory.json")}"
+  template = "${file("templates/dynamic_inventory.json")}"
   vars {
     app_ext_ip = "${module.app.app_external_ip[0]}"
     db_ext_ip = "${module.db.db_external_ip[0]}"
     db_int_ip = "${module.vpc.db_ip}"
   }
+}
+
+resource "template_file" "yml_inv" {
+  template = "${file("templates/inventory.yml.tpl")}"
+  vars {
+    app_ext_ip = "${module.app.app_external_ip[0]}"
+    db_ext_ip = "${module.db.db_external_ip[0]}"
+    db_int_ip = "${module.vpc.db_ip}"
+  }
+}
+
+resource "local_file" "yml_inv" {
+  filename = "../../ansible/environments/stage/inventory.yml"
+  content = "${template_file.yml_inv.rendered}"
 }

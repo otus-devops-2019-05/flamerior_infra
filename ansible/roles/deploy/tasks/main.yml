@@ -1,0 +1,17 @@
+---
+# tasks file for deploy
+- name: Show info about the env this host belongs to
+  debug:
+    msg: "This host is in {{ env }} environment!!!"
+
+- name: Fetch the latest version of application code
+  git:
+    repo: 'https://github.com/express42/reddit.git'
+    dest: /home/appuser/reddit
+    version: monolith
+  notify: restart puma
+
+- name: bundle install
+  bundler:
+    state: present
+    chdir: /home/appuser/reddit
