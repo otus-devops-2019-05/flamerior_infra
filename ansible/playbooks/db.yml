@@ -3,4 +3,4 @@
   hosts: db
   become: true
   roles:
-    - db_role
+    - db
