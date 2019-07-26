@@ -1,4 +1,0 @@
----
-# defaults file for db
-mongo_bind_ip: 0.0.0.0
-env: local

@@ -181,4 +181,15 @@ testapp_port = 9292
 - добавил картинку состояния билда 
 - использовал trytravis
 
+### 11)
+выполнены все обычные задания и задания со *
+- added vagrant for testing local
+- setted up packer for using roles
+- added molecule test 
+- moved db role to separate repo 
+https://github.com/flamerior/db_role
+- added molecule driver for gce 
+- setted up testing in gce by travis
+- added slack integration for builds of role
+
 [![Build Status](https://travis-ci.com/otus-devops-2019-05/flamerior_infra.svg?branch=ansible-3)](https://travis-ci.com/otus-devops-2019-05/flamerior_infra)
